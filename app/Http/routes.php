@@ -25,7 +25,13 @@ Route::get('/calendar/delete/{calendar}', 'CalendarController@delete');
 Route::get('/calendar/edit/{calendar}', 'CalendarController@edit');
 Route::patch('/calendar/{calendar}/update', 'CalendarController@update');
 
+Route::get('/event/{event}', 'EventsController@index');
 Route::post('/event/add', 'EventsController@add');
 Route::get('/event/edit/{event}', 'EventsController@edit');
 Route::patch('/event/{event}/update', 'EventsController@update');
 Route::get('/event/delete/{event}', 'EventsController@delete');
+
+Route::post('/comment/add', 'CommentController@add');
+Route::get('/comment/edit/{comment}', 'CommentController@edit');
+Route::patch('/comment/{comment}/update', 'CommentController@update');
+Route::get('/comment/delete/{comment}', 'CommentController@delete');

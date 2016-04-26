@@ -14,6 +14,14 @@ class EventsController extends Controller {
         $this->middleware('auth');
     }
 
+    public function index(Event $event){
+
+        Session::flash("event_id", $event->id);
+
+        return view('events.index')->with("event", $event);
+
+    }
+
     public function add(Request $post){
 
         $this->validate($post, [

@@ -41,7 +41,7 @@ class Event extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function Calendar(){
+    public function calendar(){
         return $this->belongsTo(Calendar::class);
     }
 }
