@@ -12,6 +12,8 @@ class Calendar extends Model
 
     protected $table = "calendars.calendars";
 
+
+
     public function selectAllFromUse($user){
 
 //        return DB::table('calendars.calendars')->where('user_id', '=', $user->id)->orderBy('title')->get();
@@ -40,6 +42,10 @@ class Calendar extends Model
         $calendar->description = $patch_data['description'];
 
         return $calendar->update();
+    }
+
+    public function events(){
+        return $this->hasMany(Event::class);
     }
 
 }

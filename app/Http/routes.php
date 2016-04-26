@@ -19,7 +19,13 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/calendar/{calendar}', 'CalendarController@index');
 Route::post('/calendar/add', 'CalendarController@add');
 Route::get('/calendar/delete/{calendar}', 'CalendarController@delete');
 Route::get('/calendar/edit/{calendar}', 'CalendarController@edit');
 Route::patch('/calendar/{calendar}/update', 'CalendarController@update');
+
+Route::post('/event/add', 'EventsController@add');
+Route::get('/event/edit/{event}', 'EventsController@edit');
+Route::patch('/event/{event}/update', 'EventsController@update');
+Route::get('/event/delete/{event}', 'EventsController@delete');

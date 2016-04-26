@@ -24,8 +24,7 @@ class CreateEventsTableAndSchema extends Migration
             $table->integer("calendar_id")->index()->unsigned();
             $table->string("name", 255);
             $table->text("description");
-            $table->dateTime("init");
-            $table->dateTime("ending");
+            $table->date("day");
             $table->timestamps();
 
             $table->foreign("calendar_id")->references("id")->on("calendars.calendars")->onDelete('cascade');
