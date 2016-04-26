@@ -6,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
-                <h1>Cadastro de Agendas</h1>
+                <h1>Cadastro de Agendas - {{Request::user()->name}}</h1>
                 <div class="panel-body">
 
                     <div class="row">
