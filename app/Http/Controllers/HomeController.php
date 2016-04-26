@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Calendar;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -22,8 +23,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('home');
+    public function index(Calendar $calendar, Request $request) {
+
+        return view('home')->with('calendars', $calendar->selectAllFromUse($request->user()));
     }
 }

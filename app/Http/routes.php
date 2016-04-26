@@ -18,4 +18,8 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
-Route::post('/calendar/add', 'CalendarController@index');
+
+Route::post('/calendar/add', 'CalendarController@add');
+Route::get('/calendar/delete/{calendar}', 'CalendarController@delete');
+Route::get('/calendar/edit/{calendar}', 'CalendarController@edit');
+Route::patch('/calendar/{calendar}/update', 'CalendarController@update');
