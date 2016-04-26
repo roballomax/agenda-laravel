@@ -16,6 +16,7 @@
                                 <textarea name="description">{{$event->description}}</textarea>
                                 <input type="date" name="day" value="{{$event->day}}" />
                                 <button name="send" class="btn btn-primary">Editar</button>
+                                <a href="{{URL::previous()}}">Cancelar</a>
                             </form>
                         </div>
                         @if(!empty($errors))

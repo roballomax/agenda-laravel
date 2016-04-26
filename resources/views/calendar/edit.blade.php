@@ -8,7 +8,6 @@
                     <div class="panel-heading">Dashboard</div>
                     <h1>Edição da Agenda</h1>
                     <div class="panel-body">
-
                         <div class="row">
                             <form action="/calendar/{{$calendar->id}}/update" method="post">
                                 {{method_field("PATCH")}}
@@ -16,6 +15,7 @@
                                 <input type="text" name="title" value="{{$calendar->title}}" placeholder="Agenda de negócios..."/>
                                 <textarea name="description">{{$calendar->description}}</textarea>
                                 <button name="send" class="btn btn-primary">Editar</button>
+                                <a href="{{URL::previous()}}">Cancelar</a>
                             </form>
                         </div>
                         @if(!empty($errors))

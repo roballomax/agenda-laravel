@@ -5,13 +5,13 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
+                    <div class="panel-heading">Dashboard <a href="{{URL::to("/calendar/" . $event->calendar_id)}}">Voltar</a></div>
                     <h3>Evento da agenda: {{$event->calendar->title}}</h3>
                     <div class="panel-body">
 
                         <div class="row">
                             <h1>{{$event->name}} </h1>
-                            <h3>Data: {{$event->day}}</h3>
+                            <h3>Data: {{Carbon\Carbon::createFromFormat('Y-m-d', $event->day)->format('d/m/Y')}}</h3>
                             <p class="text-justify">{{$event->description}}</p>
                         </div>
                         @if( count($event->comments) > 0)
@@ -19,11 +19,10 @@
                                 <ul class="list-group">
                                     @foreach($event->comments as $comment)
                                         <li class="list-group-item">
-                                            <a href="#"> {{$comment->text}}  </a>
+                                            <a href="#">{{$comment->text}}</a>
                                             <a href="/comment/delete/{{$comment->id}}" class="pull-right">Exlcuir</a>
                                             <a href="/comment/edit/{{$comment->id}}" class="pull-right">Editar</a>
                                         </li>
-
                                     @endforeach
                                 </ul>
                             </div>
