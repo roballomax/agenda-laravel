@@ -35,3 +35,11 @@ Route::post('/comment/add', 'CommentController@add');
 Route::get('/comment/edit/{comment}', 'CommentController@edit');
 Route::patch('/comment/{comment}/update', 'CommentController@update');
 Route::get('/comment/delete/{comment}', 'CommentController@delete');
+
+Route::get('/user', 'UsersController@index');
+Route::post('/user/add', 'UsersController@add');
+Route::get('/user/delete/{user}', 'UsersController@delete');
+Route::get('/user/edit/{user}', 'UsersController@edit');
+Route::patch('/user/update/{user}', 'UsersController@update');
+Route::get('/user/permission/{user}', 'UsersController@permission');
+Route::post('/user/permission_set/{user}', 'UsersController@permission_set');
